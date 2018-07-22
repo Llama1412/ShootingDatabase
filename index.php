@@ -6,7 +6,7 @@
 	<div class="topbar" style="position: relative">
 		<img class="topimage" src="images\barback.jpg">
 		<div class="logo">
-		<img src="images\OundleLogo.jpg" height="95" width="95">
+		<img src="images\OundleLogo.png" height="95" width="95">
 		</div>
 	</div>
 </div>

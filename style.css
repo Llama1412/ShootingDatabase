@@ -1,6 +1,5 @@
 div.topbar {
 	height:115px;
-	color: white;
 	margin-top: 0px;
 }
 
@@ -10,11 +9,17 @@ div.logo {
 	position: absolute;
 	top: 0px;
 	right: 0px;
-	background-color: white;
+	background-color: ececec;
 	padding: 10px;
 }
 
 .topimage {
-	width:95%;
+	width:100%;
 	margin: 0px;
+}
+
+div.container {
+	background-color: ececec;
+	height: 100%;
+	width: 100%;
 }
