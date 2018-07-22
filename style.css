@@ -1,6 +1,7 @@
 div.topbar {
 	height:115px;
 	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 div.logo {
@@ -22,4 +23,29 @@ div.container {
 	background-color: ececec;
 	height: 100%;
 	width: 100%;
+}
+
+div.titlebar {
+	margin-top: 0px;
+	background-color: 002d5a;
+	color: white;
+	height: 90px;
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 90px;
+}
+h1 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+div.pagetitle {
+	position: absolute;
+	right: 0px;
+	top: 125px;
+	width: 200px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 90px;
 }
