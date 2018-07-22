@@ -1,0 +1,20 @@
+div.topbar {
+	height:115px;
+	color: white;
+	margin-top: 0px;
+}
+
+div.logo {
+	width: 105px;
+	height: 105px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background-color: white;
+	padding: 10px;
+}
+
+.topimage {
+	width:95%;
+	margin: 0px;
+}
