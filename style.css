@@ -29,8 +29,8 @@ div.titlebar {
 	margin-top: 0px;
 	background-color: 002d5a;
 	color: white;
-	height: 90px;
 	width: 100%;
+	height: 90px;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 90px;
@@ -49,3 +49,67 @@ div.pagetitle {
 	vertical-align: middle;
 	line-height: 90px;
 }
+
+div.navbar {
+	height:50px;
+	background-color: pink;
+}
+div.i0 {
+	position: absolute;
+	width: 17%;
+	height: 66px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 0px;
+}
+div.i1 {
+	position: absolute;
+	left: 17%;
+	width: 17%;
+	margin: 0;
+	height: 66px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 0px;
+}
+div.i2 {
+	position: absolute;
+	left: 34%;
+	width: 17%;
+	margin: 0;
+	height: 66px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 0px;
+}
+div.i3 {
+	position: absolute;
+	left: 51%;
+	width: 17%;
+	margin: 0;
+	height: 66px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 0px;
+}
+div.i4 {
+	position: absolute;
+	left: 68%;
+	width: 17%;
+	margin: 0;
+	height: 66px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 0px;
+}
+div.i5 {
+	position: absolute;
+	left: 85%;
+	width: 15%;
+	margin: 0;
+	height: 66px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 0px;
+}
+
