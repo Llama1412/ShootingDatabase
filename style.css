@@ -57,59 +57,65 @@ div.navbar {
 div.i0 {
 	position: absolute;
 	width: 17%;
-	height: 66px;
+	height: 50px;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 0px;
+	border-right: 1px solid white;
 }
 div.i1 {
 	position: absolute;
 	left: 17%;
 	width: 17%;
 	margin: 0;
-	height: 66px;
+	height: 50px;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 0px;
+	border-right: 1px solid white;
 }
 div.i2 {
 	position: absolute;
 	left: 34%;
 	width: 17%;
 	margin: 0;
-	height: 66px;
+	height: 50px;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 0px;
+	border-right: 1px solid white;
 }
 div.i3 {
 	position: absolute;
 	left: 51%;
 	width: 17%;
 	margin: 0;
-	height: 66px;
+	height: 50px;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 0px;
+	border-right: 1px solid white;
 }
 div.i4 {
 	position: absolute;
 	left: 68%;
 	width: 17%;
 	margin: 0;
-	height: 66px;
+	height: 50px;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 0px;
+	border-right: 1px solid white;
 }
 div.i5 {
 	position: absolute;
 	left: 85%;
-	width: 15%;
+	width: 14.9%;
 	margin: 0;
-	height: 66px;
+	height: 50px;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 0px;
+	border-right: 1px solid white;
 }
 
