@@ -28,7 +28,8 @@
 	echo "<table>
 		<tr>
 			<th>Competition Name</th>
-			<th>Next Deadline</th>
+			<th>Next Round</th>
+			<th>Deadline</th>
 		</tr>";
 		
 	$con=mysqli_connect("localhost","root","","shootingdatabase");
@@ -45,16 +46,59 @@
 		$r3 = strtotime($row["R3"]);
 		$r4 = strtotime($row["R4"]);
 		$r5 = strtotime($row["R5"]);
+		$nexttime = 0;
+		$nextdate = "";
+		$nextround = "";
+		$run = True;
 		
+		while($run) {
+			if ($timestamp < $r1) {
+				$nextround = "Round 1";
+				$nexttime = $r1;
+				break;
+			}
+				
+			elseif ($timestamp < $r2) {
+				$nextround = "Round 2";
+				$nexttime = $r2;
+				break;
+			}
+			
+			elseif ($timestamp < $r3) {
+				$nextround = "Round 3";
+				$nexttime = $r3;
+				break;
+			}
+			
+			elseif ($timestamp < $r4) {
+				$nextround = "Round 4";
+				$nexttime = $r4;
+				break;
+			}
+			
+			elseif ($timestamp < $r5) {
+				$nextround = "Round 5";
+				$nexttime = $r5;
+				break;
+			}
+			
+			else {
+				break;
+			}
+			
+		};
 		
-		
-		
-		
-		
-		
+		if ($nexttime != 0) {
+			$nextdate = date("j/n/y", $nexttime);
+			echo "<tr>";
+			echo "<td>" . $row["Name"] . "</td>";
+			echo "<td>" . $nextround . "</td>";
+			echo "<td>" . $nextdate . "</td>";
+			echo "</tr>";
+			
+		}
 	}
 		
-	
 	
 	
 	
@@ -87,13 +131,14 @@
     exit();
 }
 	$userinfo = mysqli_fetch_array($userdata);
+	$date = date("j/n/y", strtotime($row['Date']));
 	
 	echo "<tr>";
 	echo "<td>" . $userinfo['Surname'] . "</td>";
 	echo "<td>" . $userinfo['FirstName'] . "</td>";
 	echo "<td>" . $row['Score'] . "</td>";
 	echo "<td>" . $row['Target'] . "</td>";
-	echo "<td>" . $row['Date'] . "</td>";
+	echo "<td>" . $date . "</td>";
 	echo "</tr>";
 	};
 	echo "</table>";
