@@ -23,6 +23,18 @@
 			<div class="i4" onclick="location.href='gallery.php';"><h2>Gallery</h2></div>
 			<div class="i5" onclick="location.href='admin.php';"><h2>Admin</h2></div>
 		</div>
+		<div class="namebox">
+		<?php
+		$con=mysqli_connect("localhost","root","","shootingdatabase");
+		if (mysqli_connect_errno()) {
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+		};
+
+		$results = mysqli_query($con,"SELECT * FROM people WHERE UserID = '" . $_GET["id"] . "'");
+		$row = mysqli_fetch_array($results);
+		echo "<h1>" . $row["FirstName"] . " " . $row["Surname"] . "</h1>";
+		?>
+		</div>
 		<?php
 		$userid = $_GET["id"];
 		$dataPoints = array();
@@ -32,7 +44,7 @@
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		};
 
-		$result = mysqli_query($con,"SELECT * FROM scores WHERE UserID = '" . $userid . "' ORDER BY Date");
+		$result = mysqli_query($con,"SELECT * FROM scores");
 		$k=0;
 		
 		while($row = mysqli_fetch_array($result))

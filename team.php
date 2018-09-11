@@ -33,7 +33,7 @@
 				if (mysqli_connect_errno()) {
 				echo "Failed to connect to MySQL: " . mysqli_connect_error();
 				};
-				$result = mysqli_query($con,"SELECT * FROM people ORDER BY UserID");
+				$result = mysqli_query($con,"SELECT * FROM people ORDER BY Surname");
 				while($row = mysqli_fetch_array($result))
 				{
 				echo "<li><a href='results.php?id=" . $row['UserID'] . "'>" . $row['FirstName'] . " " . $row['Surname'] . "</a></li>";
