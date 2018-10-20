@@ -2,12 +2,16 @@
 <title>Oundle Shooting Database </title>
 <link rel="stylesheet" type="text/css" href="login.css">
 
+<?php
+		session_start();
+?>
+
 <body>
 <div class="container">
 	<div class="topbar" style="position: relative">
-		<img class="topimage" src="..\images\barback.jpg" height="125">
+		<img class="topimage" src="images\barback.jpg" height="125">
 		<div class="logo">
-		<img src="..\images\OundleLogo.png" height="95" width="95">
+		<img src="images\OundleLogo.png" height="95" width="95">
 		</div>
 	</div>
 	<div class="titlebar">
@@ -23,14 +27,34 @@
 			<div class="i4" onclick="location.href='gallery.php';"><h2>Gallery</h2></div>
 			<div class="i5" onclick="location.href='admin.php';"><h2>Admin</h2></div>
 		</div>
+
+
+
 		<div class="loginholder">
 		<div class="login-page">
 			<div class="form">
-				<form class="login-form">
+				<form class="login-form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method="post">
 					<h1 class="titletext">Admin Login</h1>
-					<input type="password" placeholder="password"/>
+					<input name="password" type="text" placeholder="password">
 					<button>login</button>
 				</form>
+
+
+				<?php
+				if (isset($_POST["login"]) && !empty($_POST['password'])) {
+					if ($_POST["password"] == "PineApple432!") {
+						$_SESSION["valid"] = true;
+						$_SESSION["time"] = time();
+						$_SESSION["hash"] = md5((string)time());
+						echo "<script>alert('True')</script>";
+					} else {
+						echo "alert('False')";
+					}
+				}
+	  			?>
+
+
+
 			</div>
 		</div>
 		</div>
