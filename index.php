@@ -21,7 +21,7 @@
 			<div class="i2" onclick="location.href='team.php';"><h2>The Team<h2></div>
 			<div class="i3" onclick="location.href='scores.php';"><h2>Scores</h2></div>
 			<div class="i4" onclick="location.href='gallery.php';"><h2>Gallery</h2></div>
-			<div class="i5" onclick="location.href='admin.php';"><h2>Admin</h2></div>
+			<div class="i5" onclick="location.href='login.php';"><h2>Admin</h2></div>
 		</div>
 	<div class="deadlines">
 	<?php

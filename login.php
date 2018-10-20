@@ -4,6 +4,9 @@
 
 <?php
 		session_start();
+		if (isset($_SESSION["valid"])) {
+			header("Location: admin.php");
+		}
 ?>
 
 <body>
@@ -35,20 +38,19 @@
 			<div class="form">
 				<form class="login-form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method="post">
 					<h1 class="titletext">Admin Login</h1>
-					<input name="password" type="text" placeholder="password">
+					<input name="pass" type="text" placeholder="password">
 					<button>login</button>
 				</form>
 
 
 				<?php
-				if (isset($_POST["login"]) && !empty($_POST['password'])) {
-					if ($_POST["password"] == "PineApple432!") {
+				if (!empty($_POST['pass'])) {
+					if ($_POST["pass"] == "PineApple432!") {
 						$_SESSION["valid"] = true;
 						$_SESSION["time"] = time();
-						$_SESSION["hash"] = md5((string)time());
-						echo "<script>alert('True')</script>";
+						header("Location: admin.php");
 					} else {
-						echo "alert('False')";
+						echo "Incorrect password";
 					}
 				}
 	  			?>
