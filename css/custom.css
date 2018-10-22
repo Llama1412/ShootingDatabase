@@ -1,0 +1,8 @@
+.bimage {
+    height:100%;
+    width:100%;
+    background: url("images/barback.jpg");
+    color:white;
+    background-attachment:fixed;
+    background-size:cover;
+}

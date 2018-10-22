@@ -1,6 +1,6 @@
 function search() {
 	var input, filter, ul, li, a, i;
-	input = document.getElementById('searchbar');
+	input = document.getElementById('Search');
 	filter = input.value.toUpperCase();
 	ul = document.getElementById("Users");
 	li = ul.getElementsByTagName('li');
