@@ -51,7 +51,7 @@
             </div>
         </nav>
         <main role="main">
-            <div class="bimage container-fluid" style="background: url('images/backgrounds/toby.png'); background-size: 100%;">
+            <div class="bimage container-fluid" style="background: url('images/backgrounds/toby.png'); background-size: 100%; background-attachment: fixed;">
                 <div class="jumbotron container-fluid" style="min-height: 30%; background:rgba(255,255,255,0)">
                     <div class="container" style="min-height: 30%">
                         <h1 class="display-2" style="padding-top: 10%; padding-bottom: 10%; text-align: center; color: #f2f5f9; overflow: hidden;"><strong>
@@ -199,7 +199,6 @@
         <script src="js/jquery-1.11.1.min.js"></script>
         <!-- Live Search Script -->
         <script type="text/javascript" src="js/ajaxlivesearch.min.js"></script>
-        <script></script>
         <script>
             jQuery(document).ready(function(){
                 jQuery(".mySearch").ajaxlivesearch({
@@ -209,7 +208,7 @@
                     onResultClick: function(e, data) {
                         // get the index 0 (first column) value
                         var selectedOne = jQuery(data.selected).find('td').eq('0').text();
-                        
+                        window.location.href = 'scores.php?id=' + selectedOne;
                     },
                     onResultEnter: function(e, data) {
                         // do whatever you want

@@ -24,16 +24,16 @@ class Config
                 'pass'               => '',
                 'table'              => 'people',
                 // specify the name of search columns
-                'searchColumns'      => ['Surname'],
+                'searchColumns'      => ['Surname', 'FirstName'],
                 // specify order by column. This is optional
-                'orderBy'            => '',
+                'orderBy'            => 'UserID',
                 // specify order direction e.g. ASC or DESC. This is optional
-                'orderDirection'     => '',
+                'orderDirection'     => 'ASC',
                 /**
                  * filter the result by entering table column names
                  * to get all the columns, remove filterResult or make it an empty array
                  */
-                'filterResult'       => ["FirstName", "Surname", "Year", "House"],
+                'filterResult'       => ["UserID", "FirstName", "Surname", "Year", "House"],
                 /**
                  * specify search query comparison operator.
                  * possible values for comparison operators are: 'LIKE' and '='. this is required
@@ -43,17 +43,17 @@ class Config
                  * searchPattern is used to specify how the query is searched.
                  * possible values are: 'q', '*q', 'q*', '*q*'. this is required
                  */
-                'searchPattern'      => 'q*',
+                'searchPattern'      => '*q*',
                 // specify search query case sensitivity
                 'caseSensitive'      => false,
                 // to limit the maximum number of result uncomment this:
-                //'maxResult' => 100,
+                'maxResult' => 3,
                 // to display column header, change 'active' value to true
                 'displayHeader' => [
                     'active' => true,
                     'mapper' => [
-                        'FirstName' => 'First name',
-//                        'your_second_column' => 'Your Desired Second Title'
+                        'UserID' => 'ID',
+                        'FirstName' => 'First Name'
                     ]
                 ],
                 'type'               => 'mysql',

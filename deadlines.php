@@ -107,7 +107,6 @@
         <script src="js/jquery-1.11.1.min.js"></script>
         <!-- Live Search Script -->
         <script type="text/javascript" src="js/ajaxlivesearch.min.js"></script>
-        <script></script>
         <script>
             jQuery(document).ready(function(){
                 jQuery(".mySearch").ajaxlivesearch({
@@ -117,7 +116,7 @@
                     onResultClick: function(e, data) {
                         // get the index 0 (first column) value
                         var selectedOne = jQuery(data.selected).find('td').eq('0').text();
-                        
+                        window.location.href = 'scores.php?id=' + selectedOne;
                     },
                     onResultEnter: function(e, data) {
                         // do whatever you want
