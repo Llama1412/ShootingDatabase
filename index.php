@@ -3,13 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
         <link rel="icon" href="css/favicon.ico">
-        <title>Jumbotron Template for Bootstrap</title>
-        <!-- Bootstrap core CSS -->
+        <title>Shooting Database</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <!-- Custom styles for this template -->
         <link href="css/jumbotron.css" rel="stylesheet">
     </head>
     <body>
@@ -38,7 +34,7 @@
             </div>
         </nav>
         <main role="main">
-            <div class="bimage container-fluid" style="background: url('images/backgrounds/toby.png'); background-size: 100%; max-height: 30%">
+            <div class="bimage container-fluid" style="background: url('images/backgrounds/toby.png'); background-size: 100%;">
                 <div class="jumbotron container-fluid" style="min-height: 30%; background:rgba(255,255,255,0)">
                     <div class="container" style="min-height: 30%">
                         <h1 class="display-2" style="padding-top: 10%; padding-bottom: 10%; text-align: center; color: #f2f5f9; overflow: hidden;"><strong>
@@ -49,7 +45,6 @@
                 </div>
             </div>
             <div class="container" style="margin-top: 3%;">
-                <!-- Example row of columns -->
                 <div class="row">
                     <div class="col" style="">
                         <h2>Upcoming Competitions</h2>
