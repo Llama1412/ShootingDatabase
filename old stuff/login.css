@@ -1,0 +1,383 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #002d5a;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #4e5476;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.titletext {
+	padding-bottom: 5%;
+}
+.loginholder {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.loginholder:before, .loginholder:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.loginholder .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.loginholder .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.loginholder .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.loginholder .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.loginholder .info span .fa {
+  color: #EF3B3A;
+}
+.loginholder {
+	font-family: "Roboto", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	vertical-align: middle;
+	height: 60%;
+	
+}
+
+div.topbar {
+	height:115px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+div.logo {
+	width: 105px;
+	height: 105px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background-color: ececec;
+	padding: 10px;
+}
+
+.topimage {
+	width:100%;
+	margin: 0px;
+}
+
+div.container {
+	background-color: ececec;
+	height: 100%;
+	width: 100%;
+}
+
+div.titlebar {
+	margin-top: 0px;
+	background-color: 002d5a;
+	color: white;
+	width: 100%;
+	height: 90px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 90px;
+}
+h1 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+div.pagetitle {
+	position: absolute;
+	right: 0px;
+	top: 125px;
+	width: 200px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 90px;
+}
+
+div.navbar {
+	height:50px;
+	background-color: 002d5a;
+	border-top: 1px solid white;
+}
+div.i0 {
+	position: absolute;
+	width: 16.6%;
+	height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 0px;
+	border-right: 1px solid white;
+	color: white;
+}
+div.i0.active {
+	color: white;
+	background-color: #4e5476;
+	border-right: 1px solid white;
+	box-sizing: border-box;
+}
+i0:hover { 
+    background-color: #4e5476;
+}
+div.i1 {
+	position: absolute;
+	left: 17.1%;
+	width: 16.6%;
+	margin: 0;
+	height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 0px;
+	border-right: 1px solid white;
+	color: white;
+}
+
+div.i1.active {
+	color: white;
+	background-color: #4e5476;
+	border-right: 1px solid white;
+}
+div.i1:hover { 
+    background-color: #4e5476;
+}
+div.i2 {
+	position: absolute;
+	left: 33.75%;
+	width: 17.1%;
+	margin: 0;
+	height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 0px;
+	border-right: 1px solid white;
+	color: white;
+}
+div.i2.active {
+	color: white;
+	background-color: #4e5476;
+	border-right: 1px solid white;
+}
+div.i2:hover { 
+    background-color: #4e5476;
+}
+div.i3 {
+	position: absolute;
+	left: 50.95%;
+	width: 17.2%;
+	margin: 0;
+	height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 0px;
+	border-right: 1px solid white;
+	color: white;
+}
+div.i3.active {
+	color: white;
+	background-color: #4e5476;
+	border-right: 1px solid white;
+}
+div.i3:hover { 
+    background-color: #4e5476;
+}
+div.i4 {
+	position: absolute;
+	left: 68.2%;
+	width: 17.2%;
+	margin: 0;
+	height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 0px;
+	border-right: 1px solid white;
+	color: white;
+}
+div.i4.active {
+	color: white;
+	background-color: #4e5476;
+	border-right: 1px solid white;
+}
+div.i4:hover { 
+    background-color: #4e5476;
+}
+div.i5 {
+	position: absolute;
+	left: 85.55%;
+	width: 14%;
+	margin: 0;
+	height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 0px;
+	border-right: 1px solid white;
+	color: white;
+}
+div.i5.active {
+	color: white;
+	background-color: #4e5476;
+	border-right: 1px solid white;
+}
+div.i5:hover { 
+    background-color: #4e5476;
+}
+
+div.topscores {
+	position: absolute;
+	left: 50%;
+	width: 45%;
+	height: 72%;
+	background-color: pink
+}
+
+table {
+    border-collapse: collapse;
+    width: 75%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+	background-color:#f5f5f5;
+}
+
+div.footer {
+	position: absolute;
+	background-color: 002d5a;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 50px;
+}
+
+div.deadlines {
+	position: absolute;
+	background-color: cyan;
+	left: 5%;
+	width: 45%;
+	height: 72%;
+}
+
+.deadlinestable {
+	position: absolute;
+	top: 32%;
+	left: 10%;
+	width: 80%;
+}
+
+#Search {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+
+#Users {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#Users li a {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+}
+
+#Users li a:hover:not(.header) {
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+.searchbar {
+	position: absolute;
+	left: 33%;
+	top: 32%;
+	width: 34%;
+	height: 60%;
+	overflow-y: scroll;
+	column-width: 34%;
+}
+
+#chartContainer {
+	position: absolute;
+	left: 5%;
+	width: 45%;
+	height: 50%;
+	top: 40%;
+}
+
+.namebox {
+	left: 10%;
+	top: 25%;
+	height: 10%;
+	width:45%;
+}
