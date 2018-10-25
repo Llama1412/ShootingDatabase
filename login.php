@@ -51,7 +51,7 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input type="text" class='mySearch input-medium' id="ls_query" placeholder="Search">
+                    <input type="text" class='mySearch input-medium' id="ls_query" placeholder="Search people">
                 </form>
             </div>
         </nav>
@@ -107,7 +107,9 @@
                     onResultClick: function(e, data) {
                         // get the index 0 (first column) value
                         var selectedOne = jQuery(data.selected).find('td').eq('0').text();
-                        window.location.href = 'scores.php?id=' + selectedOne;
+                        if (selectedOne.length !== 0) {
+                            window.location.href = 'scores.php?id=' + selectedOne;
+                        }
                     },
                     onResultEnter: function(e, data) {
                         // do whatever you want
