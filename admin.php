@@ -28,7 +28,7 @@
         <link rel="stylesheet" type="text/css" href="css/ajaxlivesearch.min.css">
         <link rel="stylesheet" href="css/fontello.css">
         <link rel="stylesheet" href="css/animation.css">
-        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js\jquery-1.11.1.min.js"></script>
         <script src="js\jquery.tabledit.min.js"></script>
 
 
