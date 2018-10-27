@@ -13,7 +13,7 @@
         header("Location: login.php");
         $_SESSION["msg"] = "<br> Please login";
     }
-   
+    
         $handler = new Handler();
         $handler->getJavascriptAntiBot();
     ?>
@@ -24,14 +24,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="css/favicon.ico">
         <title>Shooting Database</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">        <link href="css/jumbotron.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="css/jumbotron.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/ajaxlivesearch.min.css">
         <link rel="stylesheet" href="css/fontello.css">
         <link rel="stylesheet" href="css/animation.css">
         <script src="js\jquery-1.11.1.min.js"></script>
         <script src="js\jquery.tabledit.min.js"></script>
-
-
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -52,7 +51,7 @@
                         <a class="nav-link" href="login.php">Admin</a>
                     </li>
                     </li class="nav-item">
-                        <a class="nav-link" href="logout.php" style="color: #ff4538"><strong>Logout</strong></a>
+                    <a class="nav-link" href="logout.php" style="color: #ff4538"><strong>Logout</strong></a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -65,9 +64,9 @@
                 <div class="row">
                     <div class="col">
                         <h1>Admin page</h1>
-                            <h2>Edit Users</h2>
-                            <table id="maintable" class="table table-hover table-striped table-fluid text-center" style="align: center;">
-                            <thead>
+                        <h2>Edit Users</h2>
+                        <table id="maintable" class="table table-hover table-striped table-fluid text-center" style="align: center;">
+                        <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>First Name</th>
@@ -75,28 +74,27 @@
                                 <th>House</th>
                                 <th>Year</th>
                             </tr>
-                            </thead>
-                            <tbody>
+                        </thead>
+                        <tbody>
                             <?php
-                            $con=mysqli_connect("localhost","root","","shootingdatabase");
-                            if (mysqli_connect_errno()) {
-                            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                            }; 
-                            $result = mysqli_query($con, "SELECT * FROM people ORDER BY Surname ASC");
-                            while($row = mysqli_fetch_array($result))
-                            {                            
-                            echo "<tr>";
-                            echo "<td>" . $row['UserID'] . "</td>";
-                            echo "<td>" . $row['FirstName'] . "</td>";
-                            echo "<td>" .  $row['Surname'] . "</td>";
-                            echo "<td>" .  $row['House'] . "</td>";
-                            echo "<td>" .  $row['Year'] . "</td>";
-                            echo "</tr>";
-                            };
-                            echo "</tbody>";
-                            echo "</table>";
-                            ?>
-            
+                                $con=mysqli_connect("localhost","root","","shootingdatabase");
+                                if (mysqli_connect_errno()) {
+                                echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                                }; 
+                                $result = mysqli_query($con, "SELECT * FROM people ORDER BY Surname ASC");
+                                while($row = mysqli_fetch_array($result))
+                                {                            
+                                echo "<tr>";
+                                echo "<td>" . $row['UserID'] . "</td>";
+                                echo "<td>" . $row['FirstName'] . "</td>";
+                                echo "<td>" .  $row['Surname'] . "</td>";
+                                echo "<td>" .  $row['House'] . "</td>";
+                                echo "<td>" .  $row['Year'] . "</td>";
+                                echo "</tr>";
+                                };
+                                echo "</tbody>";
+                                echo "</table>";
+                                ?>
                             <script>
                                 $('#maintable').Tabledit({
                                     url: 'action.php',
@@ -133,33 +131,24 @@
                             </script>
                             <h2>Add Users</h2>
                             <form action="adduser.php" method="post">
-                                <table class="table table-hover table-striped table-fluid text-center">
-                                    <thead>
-                                        <tr>
-                                            <th>First Name</th>
-                                            <th>Surname</th>
-                                            <th>House</th>
-                                            <th>Year</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
+                            <table class="table table-hover table-striped table-fluid text-center">
+                                <thead>
                                     <tr>
-                                        <th><input class="tabledit-input form-control input-sm" type="text" name="firstname"></th>
-                                        <th><input class="tabledit-input form-control input-sm" type="text" name="surname"></th>
-                                        <th><input class="tabledit-input form-control input-sm" type="text" name="house"></th>
-                                        <th><input class="tabledit-input form-control input-sm" type="text" name="year"></th>
-                                        <th><button type="submit" class="tabledit-edit-button btn btn-sm btn-default btn-success" style="float: none;">Add</button></th>
-                            </tr>
+                                        <th>First Name</th>
+                                        <th>Surname</th>
+                                        <th>House</th>
+                                        <th>Year</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <th><input class="tabledit-input form-control input-sm" type="text" name="firstname"></th>
+                                    <th><input class="tabledit-input form-control input-sm" type="text" name="surname"></th>
+                                    <th><input class="tabledit-input form-control input-sm" type="text" name="house"></th>
+                                    <th><input class="tabledit-input form-control input-sm" type="text" name="year"></th>
+                                    <th><button type="submit" class="tabledit-edit-button btn btn-sm btn-default btn-success" style="float: none;">Add</button></th>
+                                </tr>
                             </table>
-
-
-
-
-
-
-
-
-
                     </div>
                 </div>
             </div>
