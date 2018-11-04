@@ -48,14 +48,14 @@
                         <a class="nav-link" href="deadlines.php">Competition Deadlines</a>
                     </li>
 
-                    <li class="nav-item active">
-                        <a class="nav-link" href="admin.php">Edit Users</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.php" style="color: #e2b331">Edit Users</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="adminscores.php" style="color: #e2b331">Edit Scores</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admincompetitions.php" style="color: #e2b331">Edit Competitions</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="admincompetitions.php">Edit Competitions</a>
                     </li>
                     </li class="nav-item">
 
@@ -84,15 +84,17 @@
                 <div class="row">
                     <div class="col">
                         <h1>Admin page</h1>
-                        <h2>Edit Users</h2>
+                        <h2>Edit Competitions</h2>
                         <table id="maintable" class="table table-hover table-striped table-fluid text-center" style="align: center;">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>First Name</th>
-                                <th>Surname</th>
-                                <th>House</th>
-                                <th>Year</th>
+                                <th>Name</th>
+                                <th>R1</th>
+                                <th>R2</th>
+                                <th>R3</th>
+                                <th>R4</th>
+                                <th>R5</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -101,15 +103,17 @@
                                 if (mysqli_connect_errno()) {
                                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
                                 }; 
-                                $result = mysqli_query($con, "SELECT * FROM people ORDER BY Surname ASC");
+                                $result = mysqli_query($con, "SELECT * FROM competitions ORDER BY Name ASC");
                                 while($row = mysqli_fetch_array($result))
                                 {                            
                                 echo "<tr>";
-                                echo "<td>" . $row['UserID'] . "</td>";
-                                echo "<td>" . $row['FirstName'] . "</td>";
-                                echo "<td>" .  $row['Surname'] . "</td>";
-                                echo "<td>" .  $row['House'] . "</td>";
-                                echo "<td>" .  $row['Year'] . "</td>";
+                                echo "<td>" . $row['CompID'] . "</td>";
+                                echo "<td>" . $row['Name'] . "</td>";
+                                echo "<td>" .  $row['R1'] . "</td>";
+                                echo "<td>" .  $row['R2'] . "</td>";
+                                echo "<td>" .  $row['R3'] . "</td>";
+                                echo "<td>" .  $row['R4'] . "</td>";
+                                echo "<td>" .  $row['R5'] . "</td>";
                                 echo "</tr>";
                                 };
                                 echo "</tbody>";
@@ -117,10 +121,10 @@
                                 ?>
                             <script>
                                 $('#maintable').Tabledit({
-                                    url: 'action.php',
+                                    url: 'actioncomp.php',
                                     columns: {
-                                        identifier: [0, 'UserID'],
-                                        editable: [[1, 'firstname'], [2, 'surname'], [3, 'house'], [4, "year"]]
+                                        identifier: [0, 'compid'],
+                                        editable: [[1, 'name'], [2, 'r1'], [3, "r2"], [4, "r3"], [5, "r4"], [6, "r5"]]
                                     },
                                     buttons: {
                                         edit: {
@@ -149,24 +153,27 @@
                                     }
                                 });
                             </script>
-                            <h2>Add Users</h2>
-                            <form action="adduser.php" method="post">
+                            <h2>Add Competitions</h2>
+                            <form action="addcomp.php" method="post">
                             <table class="table table-hover table-striped table-fluid text-center">
-                                <thead>
-                                    <tr>
-                                        <th>First Name</th>
-                                        <th>Surname</th>
-                                        <th>House</th>
-                                        <th>Year</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tr>
-                                    <th><input class="tabledit-input form-control input-sm" type="text" name="firstname" placeholder="First Name"></th>
-                                    <th><input class="tabledit-input form-control input-sm" type="text" name="surname" placeholder="Surname"></th>
-                                    <th><input class="tabledit-input form-control input-sm" type="text" name="house" placeholder="House"></th>
-                                    <th><input class="tabledit-input form-control input-sm" type="text" name="year" placeholder="Year"></th>
-                                    <th><button type="submit" class="tabledit-edit-button btn btn-sm btn-default btn-success" style="float: none;">Add</button></th>
+                            <thead>
+                            <tr class="d-flex">
+                                <th class="col-2">Name</th>
+                                <th class="col-2">R1</th>
+                                <th class="col-2">R2</th>
+                                <th class="col-2">R3</th>
+                                <th class="col-2">R4</th>
+                                <th class="col-2">R5</th>
+                            </tr>
+                        </thead>
+                                <tr class="d-flex">
+                                    <th class="col-2"><input style="width: 100%" class="tabledit-input form-control input-sm" type="text" name="name" placeholder="name"></th>
+                                    <th class="col-2"><input class="tabledit-input form-control input-sm" type="date" name="r1"></th>
+                                    <th class="col-2"><input class="tabledit-input form-control input-sm" type="date" name="r2"></th>
+                                    <th class="col-2"><input class="tabledit-input form-control input-sm" type="date" name="r3"></th>
+                                    <th class="col-2"><input class="tabledit-input form-control input-sm" type="date" name="r4"></th>
+                                    <th class="col-2"><input class="tabledit-input form-control input-sm" type="date" name="r5"></th>
+                                    <th class="col-1"><button type="submit" class="tabledit-edit-button btn btn-sm btn-default btn-success" style="float: none;">Add</button></th>
                                 </tr>
                             </table>
                     </div>

@@ -48,11 +48,11 @@
                         <a class="nav-link" href="deadlines.php">Competition Deadlines</a>
                     </li>
 
-                    <li class="nav-item active">
-                        <a class="nav-link" href="admin.php">Edit Users</a>
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="adminscores.php" style="color: #e2b331">Edit Scores</a>
+                        <a class="nav-link" href="admin.php" style="color: #e2b331">Edit Users</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="adminscores.php">Edit Scores</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="admincompetitions.php" style="color: #e2b331">Edit Competitions</a>
@@ -84,32 +84,62 @@
                 <div class="row">
                     <div class="col">
                         <h1>Admin page</h1>
-                        <h2>Edit Users</h2>
+                        <h2>Edit Scores</h2>
+                        <input type="text" id="filter" placeholder="filter by name" class="tabledit-input form-control input-sm" onkeyup="filterFunction()">
                         <table id="maintable" class="table table-hover table-striped table-fluid text-center" style="align: center;">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>First Name</th>
-                                <th>Surname</th>
-                                <th>House</th>
-                                <th>Year</th>
+                                <th>Shooter</th>
+                                <th>Date</th>
+                                <th>Score</th>
+                                <th>Target</th>
                             </tr>
                         </thead>
                         <tbody>
+                        <script>
+                        function filterFunction() {
+                        // Declare variables 
+                        var input, filter, table, tr, td, i;
+                        input = document.getElementById("filter");
+                        filter = input.value.toUpperCase();
+                        table = document.getElementById("maintable");
+                        tr = table.getElementsByTagName("tr");
+
+                        // Loop through all table rows, and hide those who don't match the search query
+                        for (i = 0; i < tr.length; i++) {
+                            td = tr[i].getElementsByTagName("td")[1];
+                            if (td) {
+                            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                tr[i].style.display = "";
+                            } else {
+                                tr[i].style.display = "none";
+                            }
+                            } 
+                        }
+                        }
+                        </script>
                             <?php
                                 $con=mysqli_connect("localhost","root","","shootingdatabase");
                                 if (mysqli_connect_errno()) {
                                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
                                 }; 
-                                $result = mysqli_query($con, "SELECT * FROM people ORDER BY Surname ASC");
+                                $result = mysqli_query($con, "SELECT * FROM scores ORDER BY ScoreID DESC");
                                 while($row = mysqli_fetch_array($result))
-                                {                            
+                                {;
+                                $userdata = mysqli_query($con,"SELECT * FROM people WHERE UserID = '" .  $row["UserID"] . "'");
+                                if (!$userdata) {
+                                   printf("Error: %s\n", mysqli_error($con));
+                                   exit();
+                                }
+                                $userinfo = mysqli_fetch_array($userdata);
+                                $shooter = $userinfo["FirstName"] . " " . $userinfo["Surname"];
                                 echo "<tr>";
-                                echo "<td>" . $row['UserID'] . "</td>";
-                                echo "<td>" . $row['FirstName'] . "</td>";
-                                echo "<td>" .  $row['Surname'] . "</td>";
-                                echo "<td>" .  $row['House'] . "</td>";
-                                echo "<td>" .  $row['Year'] . "</td>";
+                                echo "<td>" . $row['ScoreID'] . "</td>";
+                                echo "<td>" . $shooter . "</td>";
+                                echo "<td>" .  $row['Date'] . "</td>";
+                                echo "<td>" .  $row['Score'] . "</td>";
+                                echo "<td>" .  $row['Target'] . "</td>";
                                 echo "</tr>";
                                 };
                                 echo "</tbody>";
@@ -117,10 +147,10 @@
                                 ?>
                             <script>
                                 $('#maintable').Tabledit({
-                                    url: 'action.php',
+                                    url: 'actionscore.php',
                                     columns: {
-                                        identifier: [0, 'UserID'],
-                                        editable: [[1, 'firstname'], [2, 'surname'], [3, 'house'], [4, "year"]]
+                                        identifier: [0, 'scoreid'],
+                                        editable: [[2, 'date'], [3, 'score'], [4, "target"]]
                                     },
                                     buttons: {
                                         edit: {
@@ -149,23 +179,34 @@
                                     }
                                 });
                             </script>
-                            <h2>Add Users</h2>
-                            <form action="adduser.php" method="post">
+                            <h2>Add Scores</h2>
+                            <form action="addscore.php" method="post">
                             <table class="table table-hover table-striped table-fluid text-center">
                                 <thead>
                                     <tr>
-                                        <th>First Name</th>
-                                        <th>Surname</th>
-                                        <th>House</th>
-                                        <th>Year</th>
+                                        <th>Shooter</th>
+                                        <th>Date</th>
+                                        <th>Score</th>
+                                        <th>Target</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tr>
-                                    <th><input class="tabledit-input form-control input-sm" type="text" name="firstname" placeholder="First Name"></th>
-                                    <th><input class="tabledit-input form-control input-sm" type="text" name="surname" placeholder="Surname"></th>
-                                    <th><input class="tabledit-input form-control input-sm" type="text" name="house" placeholder="House"></th>
-                                    <th><input class="tabledit-input form-control input-sm" type="text" name="year" placeholder="Year"></th>
+                                    <th><select name="shooter" class="form-control">
+                                        <?php
+                                        $con=mysqli_connect("localhost","root","","shootingdatabase");
+                                        if (mysqli_connect_errno()) {
+                                        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                                        }; 
+                                        $result = mysqli_query($con, "SELECT * FROM people ORDER BY Surname ASC");
+                                        while($row = mysqli_fetch_array($result)) {
+                                            echo "<option value='". $row["UserID"]."'>".$row["FirstName"]." ".$row["Surname"]."</option>";
+                                        }
+                                        ?>
+                                    </select></th>
+                                    <th><input class="tabledit-input form-control input-sm" type="date" name="date" placeholder="Date"></th>
+                                    <th><input class="tabledit-input form-control input-sm" type="number" name="score" placeholder="Score"></th>
+                                    <th><input class="tabledit-input form-control input-sm" type="number" name="target" placeholder="Target"></th>
                                     <th><button type="submit" class="tabledit-edit-button btn btn-sm btn-default btn-success" style="float: none;">Add</button></th>
                                 </tr>
                             </table>
