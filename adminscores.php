@@ -42,24 +42,24 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
+                        <a class="nav-link" href="index.php" style="text-align: center; vertical-align: center;">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="deadlines.php">Competition Deadlines</a>
+                        <a class="nav-link" href="deadlines.php" style="text-align: center; vertical-align: center;">Competition Deadlines</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="admin.php" style="color: #e2b331">Edit Users</a>
+                        <a class="nav-link" href="admin.php" style="color: #e2b331; text-align: center;">Edit Users</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="adminscores.php">Edit Scores</a>
+                        <a class="nav-link" href="adminscores.php" style="text-align: center;">Edit Scores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admincompetitions.php" style="color: #e2b331">Edit Competitions</a>
+                        <a class="nav-link" href="admincompetitions.php" style="color: #e2b331; text-align: center;">Edit Competitions</a>
                     </li>
                     </li class="nav-item">
 
-                    <a class="nav-link" href="logout.php" style="color: #ff4538"><strong>Logout</strong></a>
+                    <a class="nav-link" href="logout.php" style="color: #ff4538; text-align: center;"><strong>Logout</strong></a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -120,7 +120,7 @@
                         }
                         </script>
                             <?php
-                                $con=mysqli_connect("localhost","root","","shootingdatabase");
+                                $con=mysqli_connect("fdb22.awardspace.net", "2875102_shootingdatabase", "datapass123", "2875102_shootingdatabase");
                                 if (mysqli_connect_errno()) {
                                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
                                 }; 
@@ -194,7 +194,7 @@
                                 <tr>
                                     <th><select name="shooter" class="form-control">
                                         <?php
-                                        $con=mysqli_connect("localhost","root","","shootingdatabase");
+                                        $con=mysqli_connect("fdb22.awardspace.net", "2875102_shootingdatabase", "datapass123", "2875102_shootingdatabase");
                                         if (mysqli_connect_errno()) {
                                         echo "Failed to connect to MySQL: " . mysqli_connect_error();
                                         }; 

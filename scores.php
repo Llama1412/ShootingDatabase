@@ -53,7 +53,14 @@
         <main role="main">
             <div class="container container-fluid" style="margin-top: 3%;">
                 <?php
-                    $con=mysqli_connect("localhost","root","","shootingdatabase");
+                    $con=mysqli_connect("fdb22.awardspace.net", "2875102_shootingdatabase", "datapass123", "2875102_shootingdatabase");
+                    if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                    };
+                    $results = mysqli_query($con,"SELECT * FROM people WHERE UserID = '" . $_GET["id"] . "'");
+                    $row = mysqli_fetch_array($results);  
+                    echo "<h1>" . $row["FirstName"] . " " . $row["Surname"] . "</h1>";                
+                    $con=mysqli_connect("fdb22.awardspace.net", "2875102_shootingdatabase", "datapass123", "2875102_shootingdatabase");
                     if (mysqli_connect_errno()) {
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                     };
@@ -69,7 +76,7 @@
                                   $xaxis = array();
                                   $yaxis = array();
                                   
-                                  $con=mysqli_connect("localhost","root","","shootingdatabase");
+                                  $con=mysqli_connect("fdb22.awardspace.net", "2875102_shootingdatabase", "datapass123", "2875102_shootingdatabase");
                                   if (mysqli_connect_errno()) {
                                       echo "Failed to connect to MySQL: " . mysqli_connect_error();
                                   };
@@ -101,7 +108,7 @@
                             <th>Date</th>
                         </tr>
                         <?php
-                            $con=mysqli_connect("localhost","root","","shootingdatabase");
+                            $con=mysqli_connect("fdb22.awardspace.net", "2875102_shootingdatabase", "datapass123", "2875102_shootingdatabase");
                             if (mysqli_connect_errno()) {
                                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
                             };
