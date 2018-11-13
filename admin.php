@@ -45,22 +45,20 @@
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="deadlines.php" style="text-align: center;">Competition Deadlines</a>
+                        <a class="nav-link" href="deadlines.php">Competition Deadlines</a>
                     </li>
+
                     <li class="nav-item active">
-<<<<<<< HEAD
-                        <a class="nav-link" href="admin.php" style="text-align: center;">Edit Users</a>
+                        <a class="nav-link" href="admin.php">Edit Users</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="adminscores.php" style="color: #e2b331; text-align: center;">Edit Scores</a>
+                        <a class="nav-link" href="adminscores.php" style="color: #e2b331">Edit Scores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admincompetitions.php" style="color: #e2b331; text-align: center;">Edit Competitions</a>
-=======
-                        <a class="nav-link" href="login.php">Admin</a>
->>>>>>> parent of f04c2fe... update
+                        <a class="nav-link" href="admincompetitions.php" style="color: #e2b331">Edit Competitions</a>
                     </li>
                     </li class="nav-item">
+
                     <a class="nav-link" href="logout.php" style="color: #ff4538"><strong>Logout</strong></a>
                     </li>
                 </ul>
@@ -69,6 +67,18 @@
                 </form>
             </div>
         </nav>
+
+
+
+
+
+
+
+
+
+
+
+
         <main role="main">
             <div class="container container-fluid" style="margin-top: 3%;">
                 <div class="row">
@@ -87,7 +97,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                $con=mysqli_connect("fdb22.awardspace.net", "2875102_shootingdatabase", "datapass123", "2875102_shootingdatabase");
+                                $con=mysqli_connect("localhost","root","","shootingdatabase");
                                 if (mysqli_connect_errno()) {
                                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
                                 }; 
@@ -152,10 +162,10 @@
                                     </tr>
                                 </thead>
                                 <tr>
-                                    <th><input class="tabledit-input form-control input-sm" type="text" name="firstname"></th>
-                                    <th><input class="tabledit-input form-control input-sm" type="text" name="surname"></th>
-                                    <th><input class="tabledit-input form-control input-sm" type="text" name="house"></th>
-                                    <th><input class="tabledit-input form-control input-sm" type="text" name="year"></th>
+                                    <th><input class="tabledit-input form-control input-sm" type="text" name="firstname" placeholder="First Name"></th>
+                                    <th><input class="tabledit-input form-control input-sm" type="text" name="surname" placeholder="Surname"></th>
+                                    <th><input class="tabledit-input form-control input-sm" type="text" name="house" placeholder="House"></th>
+                                    <th><input class="tabledit-input form-control input-sm" type="text" name="year" placeholder="Year"></th>
                                     <th><button type="submit" class="tabledit-edit-button btn btn-sm btn-default btn-success" style="float: none;">Add</button></th>
                                 </tr>
                             </table>

@@ -45,17 +45,17 @@
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="deadlines.php" style="text-align: center;">Competition Deadlines</a>
+                        <a class="nav-link" href="deadlines.php">Competition Deadlines</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="admin.php" style="color: #e2b331; text-align: center;">Edit Users</a>
+                        <a class="nav-link" href="admin.php" style="color: #e2b331">Edit Users</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="adminscores.php" style="color: #e2b331; text-align: center;">Edit Scores</a>
+                        <a class="nav-link" href="adminscores.php" style="color: #e2b331">Edit Scores</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="admincompetitions.php" style="color: #e2b331; text-align: center;">Edit Competitions</a>
+                        <a class="nav-link" href="admincompetitions.php">Edit Competitions</a>
                     </li>
                     </li class="nav-item">
 
@@ -67,6 +67,16 @@
                 </form>
             </div>
         </nav>
+
+
+
+
+
+
+
+
+
+
 
 
         <main role="main">
@@ -89,7 +99,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                $con=mysqli_connect("fdb22.awardspace.net", "2875102_shootingdatabase", "datapass123", "2875102_shootingdatabase");
+                                $con=mysqli_connect("localhost","root","","shootingdatabase");
                                 if (mysqli_connect_errno()) {
                                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
                                 }; 

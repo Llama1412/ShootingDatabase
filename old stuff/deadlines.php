@@ -26,7 +26,7 @@
 		
 		<div class="deadtable">
 			<?php
-			$con=mysqli_connect("fdb22.awardspace.net", "2875102_shootingdatabase", "datapass123", "2875102_shootingdatabase");
+			$con=mysqli_connect("localhost","root","","shootingdatabase");
 			if (mysqli_connect_errno()) {
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			};
