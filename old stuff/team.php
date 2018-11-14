@@ -29,11 +29,10 @@
 
 		<ul id="Users">
 			<?php
-				$con=mysqli_connect("localhost","root","","shootingdatabase");
 				if (mysqli_connect_errno()) {
 				echo "Failed to connect to MySQL: " . mysqli_connect_error();
 				};
-				$result = mysqli_query($con,"SELECT * FROM people ORDER BY Surname");
+				$result = mysqli_query($connection,"SELECT * FROM people ORDER BY Surname");
 				while($row = mysqli_fetch_array($result))
 				{
 				echo "<li><a href='results.php?id=" . $row['UserID'] . "'>" . $row['FirstName'] . " " . $row['Surname'] . "</a></li>";

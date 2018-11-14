@@ -4,7 +4,7 @@
 // Note that is just an example. Should take precautions such as filtering the input data.
 
 header('Content-Type: application/json');
-
+include 'connection.php';
 
 
 $firstname = $_POST["firstname"];

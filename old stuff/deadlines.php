@@ -26,12 +26,11 @@
 		
 		<div class="deadtable">
 			<?php
-			$con=mysqli_connect("localhost","root","","shootingdatabase");
 			if (mysqli_connect_errno()) {
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			};
 
-			$result = mysqli_query($con,"SELECT * FROM competitions ORDER BY Name");
+			$result = mysqli_query($connection,"SELECT * FROM competitions ORDER BY Name");
 
 			echo "<table class='deadlinestable'>
 				<tr>

@@ -2,7 +2,7 @@
     $DS = DIRECTORY_SEPARATOR;
     file_exists(__DIR__ . $DS . 'core' . $DS . 'Handler.php') ? require_once __DIR__ . $DS . 'core' . $DS . 'Handler.php' : die('Handler.php not found');
     file_exists(__DIR__ . $DS . 'core' . $DS . 'Config.php') ? require_once __DIR__ . $DS . 'core' . $DS . 'Config.php' : die('Config.php not found');
-    
+    include 'connection.php';
     use AjaxLiveSearch\core\Config;
     use AjaxLiveSearch\core\Handler;
     

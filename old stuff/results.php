@@ -25,12 +25,12 @@
 		</div>
 		<div class="namebox">
 		<?php
-		$con=mysqli_connect("localhost","root","","shootingdatabase");
+		$connection=mysqli_connect("localhost","root","","shootingdatabase");
 		if (mysqli_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		};
 
-		$results = mysqli_query($con,"SELECT * FROM people WHERE UserID = '" . $_GET["id"] . "'");
+		$results = mysqli_query($connection,"SELECT * FROM people WHERE UserID = '" . $_GET["id"] . "'");
 		$row = mysqli_fetch_array($results);
 		echo "<h1>" . $row["FirstName"] . " " . $row["Surname"] . "</h1>";
 		?>
@@ -39,12 +39,11 @@
 		$userid = $_GET["id"];
 		$dataPoints = array();
 		
-		$con=mysqli_connect("localhost","root","","shootingdatabase");
 		if (mysqli_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		};
 
-		$result = mysqli_query($con,"SELECT * FROM scores");
+		$result = mysqli_query($connection,"SELECT * FROM scores");
 		$k=0;
 		
 		while($row = mysqli_fetch_array($result))

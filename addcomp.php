@@ -5,7 +5,7 @@
 
 header('Content-Type: application/json');
 
-
+include 'connection.php';
 
 $name = $_POST["name"];
 $r1 = $_POST["r1"];
