@@ -5,8 +5,6 @@
 
 header('Content-Type: application/json');
 
-
-$connect = mysqli_connect("localhost", "root", "", "shootingdatabase");
 $input = filter_input_array(INPUT_POST);
 
 $firstname = mysqli_real_escape_string($connect, $input["FirstName"]);
@@ -32,7 +30,7 @@ if ($input["action"] === "delete") {
     $query = "
     DELETE FROM people
     WHERE UserID = '".$input["UserID"]."'";
-    mysqli_query($connect, $query);
+    mysqli_query($connection, $query);
 }
 
 echo json_encode($input)

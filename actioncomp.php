@@ -6,7 +6,6 @@
 header('Content-Type: application/json');
 
 
-$connect = mysqli_connect("localhost", "root", "", "shootingdatabase");
 $input = filter_input_array(INPUT_POST);
 
 
@@ -30,7 +29,7 @@ if ($input["action"] === "delete") {
     $query = "
     DELETE FROM competitions
     WHERE CompID = '".$input["compid"]."'";
-    mysqli_query($connect, $query);
+    mysqli_query($connection, $query);
 }
 
 echo json_encode($input)

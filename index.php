@@ -72,11 +72,10 @@
                             <th>Deadline</th>
                         </tr>
                         <?php
-                            $con=mysqli_connect("localhost","root","","shootingdatabase");
                             if (mysqli_connect_errno()) {
                             	echo "Failed to connect to MySQL: " . mysqli_connect_error();
                             };
-                            $result = mysqli_query($con,"SELECT * FROM competitions");
+                            $result = mysqli_query($connection,"SELECT * FROM competitions");
                             
                             while($row = mysqli_fetch_array($result)) 
                             {
@@ -152,17 +151,16 @@
                             <th>Date</th>
                         </tr>
                         <?php
-                            $con=mysqli_connect("localhost","root","","shootingdatabase");
                             if (mysqli_connect_errno()) {
                             echo "Failed to connect to MySQL: " . mysqli_connect_error();
                             };
                             
-                            $result = mysqli_query($con,"SELECT * FROM scores ORDER BY Score DESC LIMIT 5");
+                            $result = mysqli_query($connection,"SELECT * FROM scores ORDER BY Score DESC LIMIT 5");
                             
                             
                             while($row = mysqli_fetch_array($result))
                             {
-                            $userdata = mysqli_query($con,"SELECT * FROM people WHERE UserID = '" .  $row["UserID"] . "'");
+                            $userdata = mysqli_query($connection,"SELECT * FROM people WHERE UserID = '" .  $row["UserID"] . "'");
                             if (!$userdata) {
                                printf("Error: %s\n", mysqli_error($con));
                                exit();

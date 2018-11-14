@@ -120,11 +120,10 @@
                         }
                         </script>
                             <?php
-                                $con=mysqli_connect("localhost","root","","shootingdatabase");
                                 if (mysqli_connect_errno()) {
                                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
                                 }; 
-                                $result = mysqli_query($con, "SELECT * FROM scores ORDER BY ScoreID DESC");
+                                $result = mysqli_query($connection, "SELECT * FROM scores ORDER BY ScoreID DESC");
                                 while($row = mysqli_fetch_array($result))
                                 {;
                                 $userdata = mysqli_query($con,"SELECT * FROM people WHERE UserID = '" .  $row["UserID"] . "'");

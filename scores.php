@@ -101,12 +101,11 @@
                             <th>Date</th>
                         </tr>
                         <?php
-                            $con=mysqli_connect("localhost","root","","shootingdatabase");
                             if (mysqli_connect_errno()) {
                                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
                             };
                     
-                            $result = mysqli_query($con,"SELECT * FROM scores WHERE UserID = '" . $_GET["id"] . "'");
+                            $result = mysqli_query($connection,"SELECT * FROM scores WHERE UserID = '" . $_GET["id"] . "'");
                                                 
                             while($row = mysqli_fetch_array($result))
                             {

@@ -6,7 +6,6 @@
 header('Content-Type: application/json');
 
 
-$connect = mysqli_connect("localhost", "root", "", "shootingdatabase");
 
 $name = $_POST["shooter"];
 $date = $_POST["date"];
@@ -16,6 +15,6 @@ $target = $_POST["target"];
 
 
 $query = "INSERT INTO scores (UserID, Date, Score, Target) VALUES ('".$name."', '".$date."', '".$score."', '".$target."');";
-mysqli_query($connect, $query);
+mysqli_query($connection, $query);
 header("location:adminscores.php");    
 ?>
