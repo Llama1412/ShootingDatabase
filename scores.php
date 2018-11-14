@@ -2,7 +2,7 @@
     $DS = DIRECTORY_SEPARATOR;
     file_exists(__DIR__ . $DS . 'core' . $DS . 'Handler.php') ? require_once __DIR__ . $DS . 'core' . $DS . 'Handler.php' : die('Handler.php not found');
     file_exists(__DIR__ . $DS . 'core' . $DS . 'Config.php') ? require_once __DIR__ . $DS . 'core' . $DS . 'Config.php' : die('Config.php not found');
-    
+    include 'connection.php';
     use AjaxLiveSearch\core\Config;
     use AjaxLiveSearch\core\Handler;
     
@@ -53,11 +53,10 @@
         <main role="main">
             <div class="container container-fluid" style="margin-top: 3%;">
                 <?php
-                    $con=mysqli_connect("localhost","root","","shootingdatabase");
                     if (mysqli_connect_errno()) {
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                     };
-                    $results = mysqli_query($con,"SELECT * FROM people WHERE UserID = '" . $_GET["id"] . "'");
+                    $results = mysqli_query($connection,"SELECT * FROM people WHERE UserID = '" . $_GET["id"] . "'");
                     $row = mysqli_fetch_array($results);  
                     echo "<h1>" . $row["FirstName"] . " " . $row["Surname"] . "</h1>";                
                     ?>
@@ -69,12 +68,11 @@
                                   $xaxis = array();
                                   $yaxis = array();
                                   
-                                  $con=mysqli_connect("localhost","root","","shootingdatabase");
                                   if (mysqli_connect_errno()) {
                                       echo "Failed to connect to MySQL: " . mysqli_connect_error();
                                   };
                             
-                                  $result = mysqli_query($con,"SELECT * FROM scores WHERE UserID = '" . $_GET["id"] . "'");
+                                  $result = mysqli_query($connection,"SELECT * FROM scores WHERE UserID = '" . $_GET["id"] . "'");
                                   $k=1;
                                   $tot=0;
                                   $averagePoints=[];
@@ -101,12 +99,11 @@
                             <th>Date</th>
                         </tr>
                         <?php
-                            $con=mysqli_connect("localhost","root","","shootingdatabase");
                             if (mysqli_connect_errno()) {
                                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
                             };
                     
-                            $result = mysqli_query($con,"SELECT * FROM scores WHERE UserID = '" . $_GET["id"] . "'");
+                            $result = mysqli_query($connection,"SELECT * FROM scores WHERE UserID = '" . $_GET["id"] . "'");
                                                 
                             while($row = mysqli_fetch_array($result))
                             {

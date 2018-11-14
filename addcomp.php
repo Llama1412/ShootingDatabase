@@ -5,8 +5,7 @@
 
 header('Content-Type: application/json');
 
-
-$connect = mysqli_connect("localhost", "root", "", "shootingdatabase");
+include 'connection.php';
 
 $name = $_POST["name"];
 $r1 = $_POST["r1"];
@@ -17,6 +16,6 @@ $r5 = $_POST["r5"];
 
 
 $query = "INSERT INTO competitions (Name, R1, R2, R3, R4, R5) VALUES ('".$name."', '".$r1."', '".$r2."', '".$r3."', '".$r4."', '".$r5."');";
-mysqli_query($connect, $query);
+mysqli_query($connection, $query);
 header("location:admincompetitions.php");    
 ?>

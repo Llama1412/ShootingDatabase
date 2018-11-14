@@ -2,7 +2,7 @@
     $DS = DIRECTORY_SEPARATOR;
     file_exists(__DIR__ . $DS . 'core' . $DS . 'Handler.php') ? require_once __DIR__ . $DS . 'core' . $DS . 'Handler.php' : die('Handler.php not found');
     file_exists(__DIR__ . $DS . 'core' . $DS . 'Config.php') ? require_once __DIR__ . $DS . 'core' . $DS . 'Config.php' : die('Config.php not found');
-    
+    include 'connection.php';
     use AjaxLiveSearch\core\Config;
     use AjaxLiveSearch\core\Handler;
     
@@ -99,11 +99,10 @@
                         </thead>
                         <tbody>
                             <?php
-                                $con=mysqli_connect("localhost","root","","shootingdatabase");
                                 if (mysqli_connect_errno()) {
                                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
                                 }; 
-                                $result = mysqli_query($con, "SELECT * FROM competitions ORDER BY Name ASC");
+                                $result = mysqli_query($connection, "SELECT * FROM competitions ORDER BY Name ASC");
                                 while($row = mysqli_fetch_array($result))
                                 {                            
                                 echo "<tr>";

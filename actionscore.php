@@ -4,9 +4,8 @@
 // Note that is just an example. Should take precautions such as filtering the input data.
 
 header('Content-Type: application/json');
+include 'connection.php';
 
-
-$connect = mysqli_connect("localhost", "root", "", "shootingdatabase");
 $input = filter_input_array(INPUT_POST);
 
 
@@ -25,7 +24,7 @@ if ($input["action"] === "delete") {
     $query = "
     DELETE FROM scores
     WHERE ScoreID = '".$input["scoreid"]."'";
-    mysqli_query($connect, $query);
+    mysqli_query($connection, $query);
 }
 
 echo json_encode($input)
