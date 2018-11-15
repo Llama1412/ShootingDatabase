@@ -18,10 +18,10 @@ class Config
         // ***** Database ***** //
         'dataSources'           => [
             'ls_query' => [
-                'host'               => 'localhost',
-                'database'           => 'shootingdatabase',
-                'username'           => 'root',
-                'pass'               => '',
+                'host'               => 'sql2.freemysqlhosting.net',
+                'database'           => 'sql2265459',
+                'username'           => 'sql2265459',
+                'pass'               => 'hW7%pK9%',
                 'table'              => 'people',
                 // specify the name of search columns
                 'searchColumns'      => ['Surname', 'FirstName'],
