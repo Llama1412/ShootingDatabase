@@ -63,7 +63,7 @@
 			                <div class="form">
 				                <form class="login-form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method="post">
 					                <h1 class="titletext">Admin Login</h1>
-					                <input name="pass" type="text" placeholder="password">
+					                <input name="pass" type="text" placeholder="password" type="password">
 					                <button>login</button>
 				                </form>
 
