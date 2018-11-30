@@ -63,7 +63,7 @@
 			                <div class="form">
 				                <form class="login-form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method="post">
 					                <h1 class="titletext">Admin Login</h1>
-					                <input name="pass" type="text" placeholder="password" type="password">
+					                <input name="pass" type="password" placeholder="password" type="password">
 					                <button>login</button>
 				                </form>
 
@@ -72,9 +72,14 @@
                                     echo $_SESSION["msg"];
                                     $_SESSION["msg"] = "";
                                 }
-
+                                $result = mysqli_query($connection,"SELECT * FROM credentials WHERE identifier = '1'");
+                                
+                                while($row = mysqli_fetch_array($result))
+                                {
+                                    $hashedpass = $row['PassHash'];
+                                };
                                 if (!empty($_POST['pass'])) {
-                                    if ($_POST["pass"] == "TestPassword123") {
+                                    if (hash("sha512", $_POST["pass"]) == $hashedpass) {
                                         $_SESSION["valid"] = true;
                                         $_SESSION["time"] = time();
                                         header("Location: admin.php");

@@ -57,12 +57,26 @@
                     <li class="nav-item">
                         <a class="nav-link" href="admincompetitions.php" style="color: #e2b331">Edit Competitions</a>
                     </li>
-                    </li class="nav-item">
-
+                    <li class="nav-item">
                     <a class="nav-link" href="logout.php" style="color: #ff4538"><strong>Logout</strong></a>
                     </li>
+                    <li>
+                    <div class="dropdown">
+                    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Change Password
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <form action="passchange.php" method="post">
+                            <input class="tabledit-input form-control input-sm" type="password" name="currpass" placeholder="Current Password">
+                            <input class="tabledit-input form-control input-sm" type="password" name="newpass" placeholder="New Password">
+                            <button type="submit" class="tabledit-edit-button btn btn-sm btn-default btn-success" style="float: center; align: center;">Change</button>
+                        </form>
+                    </div>
+                </div>
+                </li>
+
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
+                                <form class="form-inline my-2 my-lg-0">
                     <input type="text" class='mySearch input-medium' id="ls_query" placeholder="Search people">
                 </form>
             </div>
@@ -83,6 +97,8 @@
             <div class="container container-fluid" style="margin-top: 3%;">
                 <div class="row">
                     <div class="col">
+                    <?php if (isset($_SESSION["message"])) {echo $_SESSION["message"];};?>
+
                         <h1>Admin page</h1>
                         <h2>Edit Scores</h2>
                         <input type="text" id="filter" placeholder="filter by name" class="tabledit-input form-control input-sm" onkeyup="filterFunction()">
