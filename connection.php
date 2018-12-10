@@ -1,3 +1,3 @@
 <?php
-$connection = mysqli_connect("sql2.freemysqlhosting.net", "sql2265459", "hW7%pK9%", "sql2265459");
+$connection = mysqli_connect("35.205.220.6", "root", "pass", "shootingdatabase");
 ?>
