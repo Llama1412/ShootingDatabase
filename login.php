@@ -72,7 +72,7 @@
                                     echo $_SESSION["msg"];
                                     $_SESSION["msg"] = "";
                                 }
-                                $result = mysqli_query($connection,"SELECT * FROM credentials WHERE identifier = '1'");
+                                $result = mysqli_query($connection,"SELECT * FROM credentials WHERE identifier = 1");
                                 
                                 while($row = mysqli_fetch_array($result))
                                 {
