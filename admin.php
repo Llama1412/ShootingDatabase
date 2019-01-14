@@ -29,6 +29,9 @@
         <link rel="stylesheet" type="text/css" href="css/ajaxlivesearch.min.css">
         <link rel="stylesheet" href="css/fontello.css">
         <link rel="stylesheet" href="css/animation.css">
+        <script src="js\jquery-1.11.1.min.js"></script>
+        <script src="js\jquery.tabledit.min.js"></script>
+        
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -179,7 +182,6 @@
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="js/jquery-1.11.1.min.js"></script>
         <!-- Live Search Script -->
         <script type="text/javascript" src="js/ajaxlivesearch.min.js"></script>
         <script>
