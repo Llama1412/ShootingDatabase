@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2018 at 09:40 AM
+-- Generation Time: Feb 26, 2019 at 09:43 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -46,7 +46,26 @@ CREATE TABLE `competitions` (
 INSERT INTO `competitions` (`CompID`, `Name`, `Type`, `R1`, `R2`, `R3`, `R4`, `R5`) VALUES
 (2, 'Comp 1', 'S', '2018-08-02', '2018-08-03', '2018-08-04', '2018-08-05', '2018-12-14'),
 (3, 'Comp 2', 'S', '2018-08-05', '2018-08-06', '2018-08-07', '2018-08-08', '2018-08-09'),
-(4, 'Comp 3', 'S', '2018-07-31', '2018-08-01', '2018-08-02', '2018-08-03', '2018-08-04');
+(4, 'Comp 3', 'S', '2018-07-31', '2018-08-01', '2018-08-02', '2018-08-03', '2018-08-04'),
+(5, 'Test Competition', 'S', '2018-12-10', '2018-12-11', '2018-12-13', '2018-12-14', '2018-12-15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `credentials`
+--
+
+CREATE TABLE `credentials` (
+  `identifier` int(11) NOT NULL,
+  `PassHash` varchar(999) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `credentials`
+--
+
+INSERT INTO `credentials` (`identifier`, `PassHash`) VALUES
+(1, '804f50ddbaab7f28c933a95c162d019acbf96afde56dba10e4c7dfcfe453dec4bacf5e78b1ddbdc1695a793bcb5d7d409425db4cc3370e71c4965e4ef992e8c4');
 
 -- --------------------------------------------------------
 
@@ -104,7 +123,8 @@ INSERT INTO `people` (`UserID`, `FirstName`, `Surname`, `House`, `Year`) VALUES
 (3, 'George', 'Godwin-Austen', 'Ldr', '4'),
 (4, 'Nathan', 'Chu', 'B', 'L6'),
 (5, 'Emma', 'Bruce Gardyne', 'N', 'U6'),
-(6, 'Harry', 'James', 'Lx', 'U6');
+(6, 'Harry', 'James', 'Lx', 'U6'),
+(7, 'Test', 'Person', 'Lx', 'U6');
 
 -- --------------------------------------------------------
 
@@ -136,7 +156,9 @@ INSERT INTO `scores` (`ScoreID`, `UserID`, `CompID`, `Date`, `Score`, `Type`, `T
 (8, 6, 0, '2018-10-29', '100', 'S', '10'),
 (9, 6, 0, '2018-10-29', '99', 'S', '10'),
 (10, 6, 0, '2018-10-29', '100', 'S', '10'),
-(11, 2, 0, '2018-11-03', '99', '', '10');
+(11, 2, 0, '2018-11-03', '99', 'S', '10'),
+(12, 5, 0, '1970-01-01', '90', 'S', '5'),
+(13, 7, 0, '2018-12-13', '96', '', '5');
 
 -- --------------------------------------------------------
 
@@ -185,7 +207,7 @@ ALTER TABLE `scores`
 -- AUTO_INCREMENT for table `competitions`
 --
 ALTER TABLE `competitions`
-  MODIFY `CompID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `CompID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `houses`
@@ -197,13 +219,13 @@ ALTER TABLE `houses`
 -- AUTO_INCREMENT for table `people`
 --
 ALTER TABLE `people`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `scores`
 --
 ALTER TABLE `scores`
-  MODIFY `ScoreID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ScoreID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
