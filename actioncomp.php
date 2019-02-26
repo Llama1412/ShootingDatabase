@@ -1,8 +1,4 @@
 <?php
-
-// Basic example of PHP script to handle with jQuery-Tabledit plug-in.
-// Note that is just an example. Should take precautions such as filtering the input data.
-
 header('Content-Type: application/json');
 include 'connection.php';
 
