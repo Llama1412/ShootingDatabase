@@ -18,10 +18,10 @@ class Config
         // ***** Database ***** //
         'dataSources'           => [
             'ls_query' => [
-                'host'               => '35.205.220.6',
+                'host'               => 'localhost',
                 'database'           => 'shootingdatabase',
                 'username'           => 'root',
-                'pass'               => 'pass',
+                'pass'               => '',
                 'table'              => 'people',
                 // specify the name of search columns
                 'searchColumns'      => ['Surname', 'FirstName'],
