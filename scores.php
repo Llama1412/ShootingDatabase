@@ -38,7 +38,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="deadlines.php">Competition Deadlines</a>
                     </li>
                     <li class="nav-item">
